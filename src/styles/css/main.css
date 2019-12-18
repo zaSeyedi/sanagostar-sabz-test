@@ -1,0 +1,7 @@
+@import url(fontiran.css);
+body {
+    margin: 0;
+    font-family: IRANSans !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;}
+  
