@@ -36,7 +36,7 @@ export default class ListPage extends React.Component {
             <div className="App">
                 <label className="lableFirst">{this.state.list.length> 0  ? 'نمایش لیست کارفرما ها' : '...در حال بارگذاری'}</label>
                 {this.state.list.length> 0 && <div className="border">
-                    {this.state.list.map((item, index) => (
+                    {this.state.list.reverse().map((item, index) => (
                         <KarfarmaCard
                             key={index}
                             data={item}

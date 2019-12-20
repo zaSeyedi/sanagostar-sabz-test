@@ -1,7 +1,9 @@
 import React from 'react';
 import '../styles/css/informationPage.css'
+import axios from 'axios'
+import { withRouter  } from 'react-router-dom'
 
-export default class InformationPage extends React.Component {
+class InformationPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -16,15 +18,41 @@ export default class InformationPage extends React.Component {
 
     insertKarfarma() {
         let data = {
-            fistname: this.state.name,
-            LastName: this.state.LastName,
-            mobile: this.state.mobile,
-            phone: this.state.phone,
+            region: 1,
+            lat: 35.7717503,
+            lng: 51.3365315,
+            first_name: this.state.name,
+            last_name: this.state.LastName,
+            coordinate_mobile: this.state.mobile,
+            coordinate_phone_number: this.state.phone,
             address: this.state.address,
-            gender: this.state.gender === true ? 'man': 'woman',
+            gender: this.state.gender === true ? 'Male' : 'Female',
         }
-        console.log(data)
-        //send data to server
+        let self = this
+        axios({
+            method: 'post',
+            url: 'http://stage.achareh.ir/api/karfarmas/address',
+            headers: {
+                "Authorization": 'Basic ' + Buffer('09822222222:sana1234').toString('base64')
+            },
+            data: data
+        })
+            .then(function (response) {
+                if (response.status === 201) {
+                    self.props.history.push("/karfarma-list");
+                    self.setState({
+                        name: '',
+                        LastName: '',
+                        mobile: '',
+                        phone: '',
+                        address: '',
+                        gender: true
+                    })
+                }
+            })
+            .catch(function (ex) {
+                console.log(ex)
+            })
     }
 
     render() {
@@ -89,3 +117,5 @@ export default class InformationPage extends React.Component {
         );
     }
 }
+
+export default withRouter(InformationPage);
