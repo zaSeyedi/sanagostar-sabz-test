@@ -83,7 +83,7 @@ body {
   .boxaddress input{
     width:100%;
     padding: 10px;
-    padding-right: 50%;
+    padding-right: 5px;
   }
   .box content{
       color: rgb(62, 120, 185);
@@ -122,10 +122,9 @@ body {
     text-align: center;
     width: 50%;
     height: 40px;
-    border:1px solid rgb(62, 120, 185);
     
   }
-  .woman{
+  .blue{
     width: 50%;
     height: 40px;
     display: flex;
@@ -135,7 +134,7 @@ body {
     background-color: rgb(62, 120, 185);
     color: beige;
   }
-  .man{
+  .white{
     width: 50%;
     height: 40px;
     display: flex;
@@ -155,6 +154,12 @@ body {
     border-radius: 10px;
     background-color: rgb(17, 211, 120);
     color: beige;
+    border: none;
+    outline: none;
+  }
+  .inGender button{
+    border: none;
+    outline: none;
   }
 
   @media (max-width: 670px) {
