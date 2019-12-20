@@ -13,12 +13,14 @@ export default class KarfarmaCard extends React.Component {
                 <div className="SeRow">
                     <div className="SecondRow">
                         <label className="lable2">نام و نام خانوادگی</label>
-                        <div className="name">{this.props.data.fullName}</div>
+                        <div className="name">
+                            {this.props.data.first_name + ' ' + this.props.data.last_name}
+                        </div>
 
                     </div>
                     <div className="SecondRow">
                         <label className="lable2">تلفن</label>
-                        <div className="phone">{this.props.data.phone}</div>
+                        <div className="phone">{this.props.data.coordinate_mobile}</div>
                     </div>
                 </div>
             </div>

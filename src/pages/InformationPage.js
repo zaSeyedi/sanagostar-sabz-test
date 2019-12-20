@@ -24,6 +24,7 @@ export default class InformationPage extends React.Component {
             gender: this.state.gender === true ? 'man': 'woman',
         }
         console.log(data)
+        //send data to server
     }
 
     render() {
