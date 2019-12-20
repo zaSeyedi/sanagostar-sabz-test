@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route,BrowserRouter as Router } from 'react-router-dom'
-import InformationPage from './components/InformationPage'
-import ListPage from './components/ListPage'
+import InformationPage from './pages/InformationPage'
+import ListPage from './pages/ListPage'
 
 export default class App extends React.Component {
   render() {
